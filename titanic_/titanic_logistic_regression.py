@@ -1,13 +1,8 @@
-# -*- coding: utf-8 -*-
-import wget
-# url='https://github.com/shreydan/jetson-nano-config/raw/main/datasets/titanic/train.csv'
-# wget.download(url,out='train.csv')
-# wget -o train.csv https://github.com/shreydan/jetson-nano-config/raw/main/datasets/titanic/train.csv
-# wget -O test.csv "http://sinca.mma.gob.cl/cgi-bin/APUB-MMA/apub.tsindico2.cgi?outtype=xcl&macro=./RII/237/Cal/PM25//PM25.diario.diario.ic&from=13060100&to=15110323&path=/usr/airviro/data/CONAMA/&lang=esp&rsrc=&macropath="
-import pandas as pd
-titanic =pd.read_csv('https://raw.githubusercontent.com/shreydan/jetson-nano-config/main/datasets/titanic/train.csv')
 
-titanic.head()
+import pandas as pd
+titanic =pd.read_csv(r'C:\Users\ritik\OneDrive\Documents\GitHub\jetson_nano_projects\titanic_\train.csv')
+
+print(titanic.head())
 
 titanic.tail()
 
@@ -46,7 +41,7 @@ x[pd.isnull(x).any(axis=1)]
 
 x.Age.fillna(x.Age.mean(),inplace=True)
 x.isnull().values.any()
-x.head()
+print(x.head())
 
 #split dataset into traning and validation
 
@@ -76,13 +71,13 @@ model=LogisticRegression()
 
 model.fit(x_train,y_train)
 
-model.score(x_train,y_train)
+print("score of train :",model.score(x_train,y_train))
 
-model.score(x_valid,y_valid)
+print("score of vaild:",model.score(x_valid,y_valid))
 
-model.slope_
+print(model.slope)
 
-model.coef_
+print(model.coef_)
 
 model.intercept_
 
