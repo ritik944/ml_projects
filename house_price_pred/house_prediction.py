@@ -70,3 +70,5 @@ print(y_test[0],y_test_pred[0])
 
 print(np.argmin(y_test_pred))
 print(y_test[2186],y_test_pred[2186])
+
+# %%
